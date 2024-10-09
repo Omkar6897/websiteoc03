@@ -4,88 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Showcase</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff;
-            color: #333;
-        }
-        nav {
-            background-color: #ff6347; /* Tomato color */
-            color: white;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 15px;
-            display: inline-block;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        nav a:hover {
-            background-color: #ff4500; /* Orange Red */
-            transform: scale(1.1);
-        }
-        section {
-            padding: 20px;
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        section.active {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .pets {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .pet {
-            margin: 15px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid #ff6347;
-            border-radius: 10px;
-            padding: 10px;
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        .pet img {
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-        .pet:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-        .pet:hover img {
-            transform: scale(1.05);
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #f1f1f1;
-            position: relative;
-            z-index: 1;
-        }
-        footer p {
-            margin: 0;
-            font-size: 14px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -100,6 +19,7 @@
     <section id="home" class="active">
         <h1>Welcome to the Pet Showcase</h1>
         <p>Explore our collection of wonderful pets! Whether you're a dog or cat lover, we've got something for everyone.</p>
+        <blockquote>"Until one has loved an animal, a part of one's soul remains unawakened." – Anatole France</blockquote>
     </section>
 
     <!-- Dogs Section -->
@@ -117,6 +37,7 @@
                 <p>Docile, willful, and friendly.</p>
             </div>
         </div>
+        <blockquote>"Dogs are not our whole life, but they make our lives whole." – Roger Caras</blockquote>
     </section>
 
     <!-- Cats Section -->
@@ -134,6 +55,7 @@
                 <p>Playful, curious, and friendly.</p>
             </div>
         </div>
+        <blockquote>"Time spent with cats is never wasted." – Sigmund Freud</blockquote>
     </section>
 
     <!-- Footer -->
@@ -148,11 +70,12 @@
             var sections = document.querySelectorAll('section');
             sections.forEach(function(section) {
                 section.classList.remove('active');
+                section.classList.remove('fade-in');
             });
 
             // Show the selected section
             var activeSection = document.getElementById(pageId);
-            activeSection.classList.add('active');
+            activeSection.classList.add('active', 'fade-in');
         }
     </script>
 
